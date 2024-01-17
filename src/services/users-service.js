@@ -10,7 +10,6 @@ async function updateBalance(userId, newBalance) {
     }
 
     const [[_,affectedCount]] = await users.increment({ balance: newBalance }, options)
-    console.log({affectedCount})
 
     return affectedCount
 }

@@ -26,13 +26,18 @@ const umzug = new Umzug({
 const APP_PORT = 3000
 
 const usersController = require('./controllers/users-controller')
+const taskController = require('./controllers/task-controller')
 
 app.post('/:userId/:amount', usersController.updateBalance)
+app.get('/tasks', taskController.list)
 
+async function init() {
+    await umzug.up()
+}
 
 async function main () {
-    await umzug.up();
-    
+    await init()
+
     app.listen(APP_PORT, () => {
         console.info(`Webapp listening on port ${APP_PORT}`)
     })

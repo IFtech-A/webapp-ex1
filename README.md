@@ -40,3 +40,7 @@ npm run worker -- worker-name
 Send negative amount to reduce the balance of the user.
 
 Only one user balance is available, so it does not matter what the userId is.
+
+## GET /tasks
+
+Returns array of unfinished jobs, sorted by creation time.

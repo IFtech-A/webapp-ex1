@@ -13,7 +13,7 @@ Run below to install the dependencies.
 npm ci
 ```
 
-Run below to run the database
+Run below to run the database, rabbitmq and redis
 ```bash
 docker-compose up -d
 ```
@@ -21,6 +21,16 @@ docker-compose up -d
 Run below to start the server.
 ```bash
 npm start
+```
+
+Run below to start the cron service for dispatch.
+```bash
+npm dispatcher
+```
+
+Run below to start the cron service for worker.
+```bash
+npm run worker -- worker-name
 ```
 
 # Routes
